@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "use regexes with file utils like rm, cp, mv, ln",
   "AUTHOR" => "Graham Ollis <plicease\@cpan.org>",
   "BUILD_REQUIRES" => {
+    "File::Spec" => 0,
     "File::Temp" => 0,
     "Test::More" => 0
   },
@@ -20,11 +21,11 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "App-RegexFileUtils",
   "EXE_FILES" => [
-    "bin/recp",
     "bin/reln",
     "bin/remv",
     "bin/rerm",
-    "bin/retouch"
+    "bin/retouch",
+    "bin/recp"
   ],
   "LICENSE" => "perl",
   "NAME" => "App::RegexFileUtils",
@@ -32,7 +33,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.02",
+  "VERSION" => "0.03",
   "test" => {
     "TESTS" => "t/*.t"
   }
