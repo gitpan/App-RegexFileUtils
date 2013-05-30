@@ -6,13 +6,13 @@ use App::RegexFileUtils;
 
 # PODNAME: rerm
 # ABSTRACT: remove with regex
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.04_01'; # VERSION
 
 
 App::RegexFileUtils->main($0, @ARGV);
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -21,7 +21,7 @@ rerm - remove with regex
 
 =head1 VERSION
 
-version 0.04
+version 0.04_01
 
 =head1 SEE ALSO
 
@@ -39,4 +39,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-

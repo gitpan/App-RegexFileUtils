@@ -12,6 +12,7 @@ bin/remv
 bin/rerm
 bin/retouch
 dist.ini
+inc/MakeMaker.pm
 lib/App/RegexFileUtils.pm
 t/recp.t
 t/reln.t

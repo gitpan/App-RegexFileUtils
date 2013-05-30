@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: use regexes with file utils like rm, cp, mv, ln
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.04_01'; # VERSION
 
 
 sub main {
@@ -176,6 +176,7 @@ sub main {
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -184,7 +185,7 @@ App::RegexFileUtils - use regexes with file utils like rm, cp, mv, ln
 
 =head1 VERSION
 
-version 0.04
+version 0.04_01
 
 =head1 SYNOPSIS
 
@@ -282,4 +283,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
