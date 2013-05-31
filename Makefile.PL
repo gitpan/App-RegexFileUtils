@@ -17,11 +17,11 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "App-RegexFileUtils",
   "EXE_FILES" => [
-    "bin/recp",
     "bin/remv",
-    "bin/rerm",
+    "bin/retouch",
     "bin/reln",
-    "bin/retouch"
+    "bin/rerm",
+    "bin/recp"
   ],
   "LICENSE" => "perl",
   "NAME" => "App::RegexFileUtils",
@@ -34,7 +34,7 @@ my %WriteMakefileArgs = (
     "File::Temp" => 0,
     "Test::More" => 0
   },
-  "VERSION" => "0.04_01",
+  "VERSION" => "0.05",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -1,5 +1,8 @@
 Revision history for App-RegexFileUtils
 
+0.05      2013-05-31 07:03:59 America/New_York
+  - promote to production
+
 0.04_01   2013-05-29 21:11:34 America/New_York
   - rm dist build dep on [Dist::Zilla::Plugin::MakeMaker::Custom]
 

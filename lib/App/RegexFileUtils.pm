@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: use regexes with file utils like rm, cp, mv, ln
-our $VERSION = '0.04_01'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 
 sub main {
@@ -185,7 +185,7 @@ App::RegexFileUtils - use regexes with file utils like rm, cp, mv, ln
 
 =head1 VERSION
 
-version 0.04_01
+version 0.05
 
 =head1 SYNOPSIS
 

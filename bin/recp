@@ -6,7 +6,7 @@ use App::RegexFileUtils;
 
 # PODNAME: recp
 # ABSTRACT: copy with regex
-our $VERSION = '0.04_01'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 
 App::RegexFileUtils->main($0, @ARGV);
@@ -21,7 +21,7 @@ recp - copy with regex
 
 =head1 VERSION
 
-version 0.04_01
+version 0.05
 
 =head1 SEE ALSO
 
