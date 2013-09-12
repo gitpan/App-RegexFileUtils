@@ -1,23 +1,26 @@
 package App::RegexFileUtils::MSWin32;
 
+# ABSTRACT: MSWin32 specific code for App::RegexFileUtils
+our $VERSION = '0.05_04'; # VERSION
+
+package
+  App::RegexFileUtils;
+
 use strict;
 use warnings;
 use File::ShareDir qw( dist_dir );
 use File::Basename qw( dirname );
 use File::Spec;
 
-# ABSTRACT: MSWin32 specific code for App::RegexFileUtils
-our $VERSION = '0.05_03'; # VERSION
-
 warn "only needed on MSWin32" unless $^O eq 'MSWin32';
 
 my $path;
 
-sub App::RegexFileUtils::share_dir
+sub share_dir
 {
   unless(defined $path)
   {
-    if(defined $App::RegexFileUtils::MSWin32::VERSION && $INC{'App/RegexFileUtils/MSWin32.pm'} =~ /blib/)
+    if(defined $App::RegexFileUtils::MSWin32::VERSION && __FILE__ =~ /blib/)
     {
       $path = File::Spec->catdir(
         dirname(__FILE__), 
@@ -55,6 +58,22 @@ sub App::RegexFileUtils::share_dir
   $path;
 }
 
+sub fix_path
+{
+  my($class, $cmd) = @_;
+
+  foreach my $path (split /;/, $ENV{PATH})
+  {
+    return if -x File::Spec->catfile($path, $cmd->[0] . '.exe');
+  }
+
+  $cmd->[0] = File::Spec->catfile(
+    App::RegexFileUtils->share_dir,
+    'ppt', $cmd->[0] . '.pl',
+  );
+  unshift @$cmd, $^X;
+}
+
 1;
 
 __END__
@@ -67,7 +86,7 @@ App::RegexFileUtils::MSWin32 - MSWin32 specific code for App::RegexFileUtils
 
 =head1 VERSION
 
-version 0.05_03
+version 0.05_04
 
 =head1 AUTHOR
 

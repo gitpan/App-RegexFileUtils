@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 # ABSTRACT: use regexes with file utils like rm, cp, mv, ln
-our $VERSION = '0.05_03'; # VERSION
+our $VERSION = '0.05_04'; # VERSION
 
 
 BEGIN {
@@ -168,15 +168,7 @@ sub main {
     push @cmd, $new unless $no_dest;
     print "% @cmd\n" if $verbose;
     
-    if($^O eq 'MSWin32')
-    {
-      require File::Spec;
-      $cmd[0] = File::Spec->catfile(
-        __PACKAGE__->share_dir,
-        'ppt', "$cmd[0].pl",
-      );
-      unshift @cmd, $^X;
-    }
+    __PACKAGE__->fix_path(\@cmd) if $^O eq 'MSWin32';
     
     system @cmd;
 
@@ -203,7 +195,7 @@ App::RegexFileUtils - use regexes with file utils like rm, cp, mv, ln
 
 =head1 VERSION
 
-version 0.05_03
+version 0.05_04
 
 =head1 SYNOPSIS
 
