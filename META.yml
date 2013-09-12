@@ -18,9 +18,9 @@ no_index:
     - share
 requires:
   File::ShareDir: 0
-  perl: 5.010
+  perl: 5.006
 resources:
   bugtracker: https://github.com/plicease/app-regexfileutils/issues
   homepage: http://perl.wdlabs.com/App-RegexFileUtils/
   repository: git://github.com/plicease/app-regexfileutils.git
-version: 0.05_02
+version: 0.05_03

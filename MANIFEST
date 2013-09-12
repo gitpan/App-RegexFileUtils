@@ -18,9 +18,11 @@ lib/App/RegexFileUtils.pm
 lib/App/RegexFileUtils/MSWin32.pm
 share/ppt/cp.pl
 share/ppt/ln.pl
+share/ppt/mv.pl
 share/ppt/rm.pl
 share/ppt/touch.pl
 t/mswin32.t
+t/mv.t
 t/recp.t
 t/reln.t
 t/remv.t

@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.010;
+use 5.006;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     "File::ShareDir" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.05_02",
+  "VERSION" => "0.05_03",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -89,7 +89,9 @@ foreach my $program (qw( mv cp rm ))
   warn "not found: $program" unless $found{$program};
 }
 
-$found{cp} = $found{rm} = 1 if $^O eq 'MSWin32';
+# On Windows we use ppt implementation of some of these
+# if they are not found i nthe path.
+$found{cp} = $found{rm} = $found{mv} = $found{touch} = 1 if $^O eq 'MSWin32';
 
 unless($found{mv} && $found{cp} && $found{rm})
 {

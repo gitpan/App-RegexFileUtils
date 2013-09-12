@@ -7,7 +7,7 @@ use File::Basename qw( dirname );
 use File::Spec;
 
 # ABSTRACT: MSWin32 specific code for App::RegexFileUtils
-our $VERSION = '0.05_02'; # VERSION
+our $VERSION = '0.05_03'; # VERSION
 
 warn "only needed on MSWin32" unless $^O eq 'MSWin32';
 
@@ -67,7 +67,7 @@ App::RegexFileUtils::MSWin32 - MSWin32 specific code for App::RegexFileUtils
 
 =head1 VERSION
 
-version 0.05_02
+version 0.05_03
 
 =head1 AUTHOR
 
