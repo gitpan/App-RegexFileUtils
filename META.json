@@ -4,7 +4,7 @@
       "Graham Ollis <plicease@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510",
    "license" : [
       "perl_5"
    ],
@@ -13,28 +13,26 @@
       "version" : "2"
    },
    "name" : "App-RegexFileUtils",
+   "no_index" : {
+      "directory" : [
+         "share"
+      ]
+   },
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.30"
+            "ExtUtils::MakeMaker" : "6.30",
+            "File::ShareDir::Install" : "0.03"
          }
       },
       "runtime" : {
          "requires" : {
-            "perl" : "5.006",
-            "strict" : "0",
-            "warnings" : "0"
-         }
-      },
-      "test" : {
-         "requires" : {
-            "File::Spec" : "0",
-            "File::Temp" : "0",
-            "Test::More" : "0"
+            "File::ShareDir" : "0",
+            "perl" : "5.010"
          }
       }
    },
-   "release_status" : "stable",
+   "release_status" : "testing",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/plicease/app-regexfileutils/issues"
@@ -46,6 +44,6 @@
          "web" : "https://github.com/plicease/app-regexfileutils"
       }
    },
-   "version" : "0.05"
+   "version" : "0.05_01"
 }
 

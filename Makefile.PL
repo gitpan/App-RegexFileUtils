@@ -2,10 +2,12 @@
 use strict;
 use warnings;
 
-use 5.006;
+use 5.010;
 
 use ExtUtils::MakeMaker 6.30;
 
+use File::ShareDir::Install;
+install_share dist => "share";
 
 
 my %WriteMakefileArgs = (
@@ -13,28 +15,24 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Graham Ollis <plicease\@cpan.org>",
   "BUILD_REQUIRES" => {},
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30"
+    "ExtUtils::MakeMaker" => "6.30",
+    "File::ShareDir::Install" => "0.03"
   },
   "DISTNAME" => "App-RegexFileUtils",
   "EXE_FILES" => [
-    "bin/remv",
     "bin/retouch",
+    "bin/recp",
     "bin/reln",
     "bin/rerm",
-    "bin/recp"
+    "bin/remv"
   ],
   "LICENSE" => "perl",
   "NAME" => "App::RegexFileUtils",
   "PREREQ_PM" => {
-    "strict" => 0,
-    "warnings" => 0
+    "File::ShareDir" => 0
   },
-  "TEST_REQUIRES" => {
-    "File::Spec" => 0,
-    "File::Temp" => 0,
-    "Test::More" => 0
-  },
-  "VERSION" => "0.05",
+  "TEST_REQUIRES" => {},
+  "VERSION" => "0.05_01",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -91,6 +89,8 @@ foreach my $program (qw( mv cp rm ))
   warn "not found: $program" unless $found{$program};
 }
 
+$found{cp} = $found{rm} = 1 if $^O eq 'MSWin32';
+
 unless($found{mv} && $found{cp} && $found{rm})
 {
   warn "this distribution requires GNU Coreutils (mv, cp, rm and ln), or equivalent";
@@ -105,5 +105,10 @@ unless($found{mv} && $found{cp} && $found{rm})
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+}
 
 

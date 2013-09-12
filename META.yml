@@ -2,25 +2,25 @@
 abstract: 'use regexes with file utils like rm, cp, mv, ln'
 author:
   - 'Graham Ollis <plicease@cpan.org>'
-build_requires:
-  File::Spec: 0
-  File::Temp: 0
-  Test::More: 0
+build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.30
+  File::ShareDir::Install: 0.03
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300034, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300038, CPAN::Meta::Converter version 2.132510'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: App-RegexFileUtils
+no_index:
+  directory:
+    - share
 requires:
-  perl: 5.006
-  strict: 0
-  warnings: 0
+  File::ShareDir: 0
+  perl: 5.010
 resources:
   bugtracker: https://github.com/plicease/app-regexfileutils/issues
   homepage: http://perl.wdlabs.com/App-RegexFileUtils/
   repository: git://github.com/plicease/app-regexfileutils.git
-version: 0.05
+version: 0.05_01

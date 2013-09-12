@@ -1,3 +1,4 @@
+.travis.yml
 Changes
 INSTALL
 LICENSE
@@ -14,10 +15,17 @@ bin/retouch
 dist.ini
 inc/MakeMaker.pm
 lib/App/RegexFileUtils.pm
+lib/App/RegexFileUtils/MSWin32.pm
+share/ppt/cp.pl
+share/ppt/ln.pl
+share/ppt/rm.pl
+share/ppt/touch.pl
+t/mswin32.t
 t/recp.t
 t/reln.t
 t/remv.t
 t/rerm.t
+t/retouch.t
 t/use.t
 xt/release/build_environment.t
 xt/release/changes.t

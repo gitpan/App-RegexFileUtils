@@ -4,8 +4,15 @@ use strict;
 use warnings;
 
 # ABSTRACT: use regexes with file utils like rm, cp, mv, ln
-our $VERSION = '0.05'; # VERSION
+our $VERSION = '0.05_01'; # VERSION
 
+
+BEGIN {
+  if($^O eq 'MSWin32')
+  {
+    require App::RegexFileUtils::MSWin32;
+  }
+}
 
 sub main {
   my $class = shift;
@@ -160,6 +167,17 @@ sub main {
     
     push @cmd, $new unless $no_dest;
     print "% @cmd\n" if $verbose;
+    
+    if($^O eq 'MSWin32')
+    {
+      require File::Spec;
+      $cmd[0] = File::Spec->catfile(
+        __PACKAGE__->share_dir,
+        'ppt', "$cmd[0].pl",
+      );
+      unshift @cmd, $^X;
+    }
+    
     system @cmd;
 
     if ($? == -1) {
@@ -185,7 +203,7 @@ App::RegexFileUtils - use regexes with file utils like rm, cp, mv, ln
 
 =head1 VERSION
 
-version 0.05
+version 0.05_01
 
 =head1 SYNOPSIS
 
@@ -270,6 +288,56 @@ sure you do NOT include the trailing slash.  That is:
  % recp /^foo/ /usr/bin
  # NOT this:
  % recp /^foo/ /usr/bin/
+
+=head1 BUNDLED FILES
+
+This distribution comes bundled with C<cp>, C<ln>, C<rm>, C<touch>
+from the old L<Perl Power Tools|https://metacpan.org/release/ppt> project.
+These are only used on C<MSWin32> if these commands are not found in
+the path as they are frequently not available on that platform.  They
+are individually licensed separately.
+
+=head2 cp.pl
+
+This program is copyright by Ken Schumack 1999.
+
+This program is free and open software. You may use, modify, distribute
+and sell this program (and any modified variants) in any way you wish,
+provided you do not restrict others from doing the same.
+
+=head2 ln.pl
+
+This program is copyright by Abigail 1999.
+
+This program is free and open software. You may use, copy, modify, distribute,
+and sell this program (and any modified variants) in any way you wish,
+provided you do not restrict others from doing the same.
+
+=head2 rm.pl
+
+Copyright (c) Steve Kemp 1999, skx@tardis.ed.ac.uk
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+=head2 touch.pl
+
+This program is copyright by Abigail 1999.
+
+This program is free and open software. You may use, copy, modify, distribute
+and sell this program (and any modified variants) in any way you wish,
+provided you do not restrict others to do the same.
 
 =head1 AUTHOR
 

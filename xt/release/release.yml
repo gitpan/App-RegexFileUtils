@@ -19,8 +19,19 @@ pod_spelling_system:
     - recmd
     - reverbose
     - utils
+    - OpenBSD
+    - MERCHANTABILITY
+    - YY
+    - acfm
+    - timestamps
+    - Schumack
+    - schumacks
+    - fiv
+    - cwest
+    - MSWin
 
 pod_coverage:
   # format is "Class#method" or "Class", regex allowed
   # for either Class or method.
-  private: []
+  private:
+    - App::RegexFileUtils::MSWin32#.*
