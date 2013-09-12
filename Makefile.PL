@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     "File::ShareDir" => 0
   },
   "TEST_REQUIRES" => {},
-  "VERSION" => "0.05_01",
+  "VERSION" => "0.05_02",
   "test" => {
     "TESTS" => "t/*.t"
   }
