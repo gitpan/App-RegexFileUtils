@@ -1,7 +1,7 @@
 package App::RegexFileUtils::MSWin32;
 
 # ABSTRACT: MSWin32 specific code for App::RegexFileUtils
-our $VERSION = '0.05_04'; # VERSION
+our $VERSION = '0.05_05'; # VERSION
 
 package
   App::RegexFileUtils;
@@ -86,7 +86,7 @@ App::RegexFileUtils::MSWin32 - MSWin32 specific code for App::RegexFileUtils
 
 =head1 VERSION
 
-version 0.05_04
+version 0.05_05
 
 =head1 AUTHOR
 
