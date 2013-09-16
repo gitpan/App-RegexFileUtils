@@ -2,7 +2,7 @@ NAME
     App::RegexFileUtils - use regexes with file utils like rm, cp, mv, ln
 
 VERSION
-    version 0.05_05
+    version 0.06
 
 SYNOPSIS
     Remove all files with a .bak extension:

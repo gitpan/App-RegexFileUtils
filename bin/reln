@@ -6,7 +6,7 @@ use App::RegexFileUtils;
 
 # PODNAME: reln
 # ABSTRACT: (sym)link with regex
-our $VERSION = '0.05_05'; # VERSION
+our $VERSION = '0.06'; # VERSION
 
 
 App::RegexFileUtils->main($0, @ARGV);
@@ -21,7 +21,7 @@ reln - (sym)link with regex
 
 =head1 VERSION
 
-version 0.05_05
+version 0.06
 
 =head1 SEE ALSO
 

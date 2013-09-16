@@ -32,7 +32,7 @@
          }
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/plicease/app-regexfileutils/issues"
@@ -44,6 +44,6 @@
          "web" : "https://github.com/plicease/app-regexfileutils"
       }
    },
-   "version" : "0.05_05"
+   "version" : "0.06"
 }
 

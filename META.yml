@@ -23,4 +23,4 @@ resources:
   bugtracker: https://github.com/plicease/app-regexfileutils/issues
   homepage: http://perl.wdlabs.com/App-RegexFileUtils/
   repository: git://github.com/plicease/app-regexfileutils.git
-version: 0.05_05
+version: 0.06
